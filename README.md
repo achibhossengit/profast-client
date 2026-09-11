@@ -1,6 +1,10 @@
-## 📦 Profast | A Parcel Delivery Service
+<p align="center">
+  <img src="./docs/images/intro-banner.png" alt="ProFast introduction banner" width="800" />
+</p>
 
+<p align="center">
 [Live app](https://profast-eae10.web.app/) · [Backend Repo](https://github.com/achibhossengit/profast-backend)
+</p>
 
 ProFast is a full-stack parcel delivery management system where users can send parcels, track delivery status in real time, and make secure payments. Riders can earn money by delivering parcels, while admins manage users, riders, and delivery operations across Bangladesh.
 
@@ -17,19 +21,18 @@ This repository is the **client application**. It handles the user interface, cl
 - Payments UI: Stripe Elements checkout in the browser using the publishable key.
 - Parcel Forms: Send-parcel flow with client-side price calculation and confirmation dialog.
 
-
 ## 🚀 Tech Stack
 
-| Category       | Technology                                      |
-| -------------- | ----------------------------------------------- |
-| UI             | React 19, Vite 7, Tailwind CSS 4, DaisyUI       |
-| Routing        | React Router 7                                  |
-| State          | TanStack Query, React Context                   |
-| Forms          | React Hook Form                                 |
-| Authentication | Firebase Authentication                         |
-| Payments       | Stripe.js                                       |
-| Map            | Leaflet                                         |
-| Deployment     | Firebase Hosting                                |
+| Category       | Technology                                |
+| -------------- | ----------------------------------------- |
+| UI             | React 19, Vite 7, Tailwind CSS 4, DaisyUI |
+| Routing        | React Router 7                            |
+| State          | TanStack Query, React Context             |
+| Forms          | React Hook Form                           |
+| Authentication | Firebase Authentication                   |
+| Payments       | Stripe.js                                 |
+| Map            | Leaflet                                   |
+| Deployment     | Firebase Hosting                          |
 
 ## 🛠️ Installation & Setup
 
@@ -82,40 +85,40 @@ src/
 
 ## 🧭 Routing
 
-| Guard                | Used for                                      |
-| -------------------- | --------------------------------------------- |
-| `NonLoggedInRoutes`  | Login, register, forgot password              |
-| `PrivateRoutes`      | Dashboard and rider application               |
-| `AdminRoute`         | User management and rider applications        |
-| `RiderRoute`         | Earnings                                      |
+| Guard               | Used for                               |
+| ------------------- | -------------------------------------- |
+| `NonLoggedInRoutes` | Login, register, forgot password       |
+| `PrivateRoutes`     | Dashboard and rider application        |
+| `AdminRoute`        | User management and rider applications |
+| `RiderRoute`        | Earnings                               |
 
-| Path                                                | Screen                |
-| --------------------------------------------------- | --------------------- |
-| `/`                                                 | Home                  |
-| `/services`                                         | Coverage map          |
-| `/be-rider`                                         | Rider application     |
-| `/login` `/register` `/forgot-password`             | Authentication        |
-| `/dashboard`                                        | Role-based home       |
-| `/dashboard/send-parcel`                            | Create parcel         |
-| `/dashboard/parcels/:delivery_status/:payment_status` | Parcel list         |
-| `/dashboard/parcels/:id`                            | Parcel details        |
-| `/dashboard/payments/:parcelId`                     | Stripe payment        |
-| `/dashboard/payment-history`                        | Payment history       |
-| `/dashboard/track-parcel/:id?`                      | Parcel tracking       |
-| `/dashboard/profile`                                | Profile               |
-| `/dashboard/rider-applications`                     | Admin applications    |
-| `/dashboard/users/:role/:district`                  | Admin users           |
-| `/dashboard/my-earnings`                            | Rider earnings        |
+| Path                                                  | Screen             |
+| ----------------------------------------------------- | ------------------ |
+| `/`                                                   | Home               |
+| `/services`                                           | Coverage map       |
+| `/be-rider`                                           | Rider application  |
+| `/login` `/register` `/forgot-password`               | Authentication     |
+| `/dashboard`                                          | Role-based home    |
+| `/dashboard/send-parcel`                              | Create parcel      |
+| `/dashboard/parcels/:delivery_status/:payment_status` | Parcel list        |
+| `/dashboard/parcels/:id`                              | Parcel details     |
+| `/dashboard/payments/:parcelId`                       | Stripe payment     |
+| `/dashboard/payment-history`                          | Payment history    |
+| `/dashboard/track-parcel/:id?`                        | Parcel tracking    |
+| `/dashboard/profile`                                  | Profile            |
+| `/dashboard/rider-applications`                       | Admin applications |
+| `/dashboard/users/:role/:district`                    | Admin users        |
+| `/dashboard/my-earnings`                              | Rider earnings     |
 
 ## 🗃️ State Management
 
-| Layer              | Responsibility                                                                 |
-| ------------------ | ------------------------------------------------------------------------------ |
-| `AuthProvider`     | Firebase session, login/register/logout, profile updates, and user role        |
-| `WarehouseProvider`| Coverage data (cached in `sessionStorage`) for maps and parcel forms           |
-| TanStack Query     | Server data for parcels, payments, users, and applications                     |
-| React Hook Form    | Form state on auth, parcel, and profile screens                                |
-| `useAxiosSecure`   | Attaches the Firebase ID token; redirects on `401` / `403`                     |
+| Layer               | Responsibility                                                          |
+| ------------------- | ----------------------------------------------------------------------- |
+| `AuthProvider`      | Firebase session, login/register/logout, profile updates, and user role |
+| `WarehouseProvider` | Coverage data (cached in `sessionStorage`) for maps and parcel forms    |
+| TanStack Query      | Server data for parcels, payments, users, and applications              |
+| React Hook Form     | Form state on auth, parcel, and profile screens                         |
+| `useAxiosSecure`    | Attaches the Firebase ID token; redirects on `401` / `403`              |
 
 After login, the client stores the Firebase user, fetches `GET /users/role`, and uses that role for navigation and route guards.
 
@@ -183,4 +186,3 @@ Non-document parcels add **৳40 per kg** over 3 kg.
 #### Not Found
 
 <img src="./docs/images/not-found.png" alt="Not Found Page" width="500" />
-
